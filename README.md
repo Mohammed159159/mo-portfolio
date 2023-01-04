@@ -13,3 +13,29 @@
 5. Add extra packages: `prettier, jasmine, eslint-prettier` and run `npm install`
 6. Add `spec` folder with `jasmine`'s configurations
 7. Run `npm run dev` to make sure frontend is working
+8. Add more dependencies `npm install --save-dev @sanity/client @sanity/image-url framer-motion node-sass sass react-icons`
+9. Get frontend ready:
+   1.  Add your CSS reusables in `./frontend_next/styles/globals.css`
+   2.  In the same drectory, create `App.scss` to use the `globals.css` settings and import file in `frontend_next/pages/_app.tsx`
+   3.  Set up your folder structure <pre>
+                                    frontend_next/pages
+                                    ├───assets
+                                    ├───components
+                                    ├───constants
+                                    ├───containers<pre>
+   4.  Create containers' folders having the files needed: `Name.tsx`, `Name.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
+        
+        
+        **Note**: This project uses the following containers: `About`, `Footer`, `Header`, `Skills`, `Testimonials`, and `Work`. 
+   5.  Create `index.ts` inside `containers` and export each container using `export {default as Name} from "./Name/Name"`
+   6.  Import containers in `frontend_next/pages/index.tsx` and their styles in `frontend_next/pages/_app.tsx`
+   7.  Add containers to HTML tree
+   8.  Create needed components' folders and the files needed: `Name.tsx`, `Name.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
+
+
+        **Note**: This project uses `Navbar` component. 
+   8.  Create `index.ts` inside `components` and export each component using `export {default as Name} from "./Name/Name"`
+   9.  Import components in `frontend_next/pages/index.tsx` and their styles in `frontend_next/pages/_app.tsx`
+   10. Add components to HTML tree
+   11. Add assets in `frontend_next/pages/assets` folder
+   12. Create `images.ts` to import paths from assets and export them as `images` module
