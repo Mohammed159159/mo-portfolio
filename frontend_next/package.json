@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prettier": "npx prettier --config --write ./.prettierrc.json ./src/**/*.ts ./spec/tests/**/*.ts",
+    "prettier": "npx prettier --config --write ./.prettierrc.json ./pages/**/*.ts ./pages/**/*.tsx",
     "start": "next start",
     "lint": "next lint",
     "jasmine": "npx jasmine"

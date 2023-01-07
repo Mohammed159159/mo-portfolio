@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+$satisfy: Satisfy, Sans-Serif;
+
+.app__navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    z-index: 2;
+    padding: 1rem 2rem;
+}
+.app__navbar-logo {
+    font: 2em $satisfy;
+    padding: 0.5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app__navbar-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+        cursor: pointer;
+        margin: 0 1rem;
+        flex-direction: column;
+        text-transform: capitalize;
+
+        div {
+            width: 5px;
+            height: 5px;
+            background: transparent;
+            border-radius: 50%;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: var(--gray-color);
+            text-decoration: none;
+            flex-direction: column;
+            font-weight: 500;
+
+            &:hover {
+                color: var(--secondary-color);
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        &:hover {
+            div {
+                background: var(--secondary-color);
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
+}
+
+.app__navbar-menu {
+    .app__navbar-menuIcon--open {
+        height: 35px;
+        width: 35px;
+        background: var(--secondary-color);
+
+        position: relative;
+        display: flex;
+        border-radius: 50%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        svg {
+            width: 70%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: var(--white-color);
+        }
+    }
+
+    .app__navbar-menuIcon--close {
+        height: 35px;
+        width: 35px;
+
+        position: relative;
+        display: flex;
+        border-radius: 50%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: whitesmoke;
+        margin: 1rem;
+        svg {
+            width: 70%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            color: var(--secondary-color);
+        }
+    }
+
+    .app__navbar-menuBody {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+
+        padding: 1rem;
+        z-index: 5;
+        width: 40%;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        background: url("../../assets/bgWhite.png");
+        background-color: var(--white-color);
+        background-size: cover;
+        background-repeat: repeat;
+
+        box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            li {
+                margin: 1rem;
+                cursor: pointer;
+                text-transform: capitalize;
+                
+                a {
+                    color: var(--gray-color);
+                    text-decoration: none;
+                    flex-direction: column;
+                    font-weight: 500;
+        
+                    &:hover {
+                        color: var(--secondary-color);
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        display: none;
+        
+    }
+}

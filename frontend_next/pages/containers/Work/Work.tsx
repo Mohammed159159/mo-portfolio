@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function Work(props: unknown) {
     return <h1>Work</h1>;

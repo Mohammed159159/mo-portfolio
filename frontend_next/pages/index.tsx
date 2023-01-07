@@ -6,25 +6,25 @@
 // const inter = Inter({ subsets: ['latin'] })
 
 import {
-  About,
-  Footer,
-  Header,
-  Skills,
-  Testimonials,
-  Work,
-} from './containers';
-import { Navbar } from './components';
+    About,
+    Footer,
+    Header,
+    Skills,
+    Testimonials,
+    Work,
+} from "./containers";
+import { Navbar } from "./components";
 
 export default function Home() {
-  return (
-    <div className='app'>
-    <Navbar/>
-    <Header/>
-    <About/>
-    <Work/>
-    <Skills/>
-    <Testimonials/>
-    <Footer/>
-    </div>
-  )
+    return (
+        <div className="app">
+            <Navbar />
+            <Header />
+            <About />
+            <Work />
+            <Skills />
+            <Testimonials />
+            <Footer />
+        </div>
+    );
 }
