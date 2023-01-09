@@ -11,10 +11,10 @@ function Navbar() {
                 {[
                     "home",
                     "about",
-                    "contacts",
                     "work",
                     "skills",
                     "testimonials",
+                    "contact",
                 ].map((item) => (
                     <li className="app__flex p-text" key={`link-${item}`}>
                         <div></div>
