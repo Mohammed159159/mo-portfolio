@@ -1,29 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
 import style from "./About.module.scss";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import images from "../../constants/images"
+import { useState, useEffect } from "react";
+import {client, urlFor} from "../../api/client"
 
-const abouts = [
-    {
-        title: "Front-end Developer",
-        description: "Have 2years of front end experience",
-        imageUrl: images.about01.src,
-    },
-    {
-        title: "Back-end Developer",
-        description: "Have 1year of back end expereince",
-        imageUrl: images.about02.src,
-    },
-    {
-        title: "Agile Professional",
-        description: "Have over 20+ years of experience with agile frameworks",
-        imageUrl: images.about03.src,
-    },
-];
 function About() {
+    interface about {
+        title: string,
+        imageUrl: string,
+        description: string
+    }
+    //dynamically populate abouts array from sanity
+    const [abouts, setAbouts] = useState<about[]>([])
+    useEffect(() => {
+        const query = '*[_type == "abouts"]';
+        client.fetch(query)
+        .then((data) => setAbouts(data))
+    }, [])
+
     return (
         <>
             <div className="head-text">
@@ -39,14 +34,14 @@ function About() {
                         whileInView={{ opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
                     >
-                        <img alt={about.title} src={about.imageUrl}></img>
+                        <img alt={urlFor(about.title).url()} src={urlFor(about.imageUrl).url()}></img>
                         <h2 className="bold-text"
                             style={{ marginTop: 20 }}>
-                            {about.title}
+                            {urlFor(about.title).url()}
                         </h2> 
                         <p className="p-text"
                             style={{ marginTop: 10 }}>
-                            {about.description}
+                            {urlFor(about.description).url()}
                         </p>
                     </motion.div>
                 ))}
