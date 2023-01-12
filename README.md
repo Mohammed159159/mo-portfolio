@@ -6,6 +6,7 @@
 4. In `sanity.config.ts`, change `import {schemaTypes} from './schemas/'` to `import {schemaTypes} from './schemas/schema'`
 5. Move to `mo-portfolio` using `cd ./mo-portfolio` and run `npm run dev` to open studio
 6. After creating frontend, create a `client.ts` file to configure sanity client
+     **Note**: Use `document['property']` syntax instead of `document.property` inside the HTML tree
 ## 2. Frontend
 1. Move to root directory
 2. Run `create-next-app@latest`
@@ -28,7 +29,7 @@
           ├───containers
           ├───pages
    4.  Create containers' folders having the files needed: `Name.tsx`, `Name.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
-        
+     
         
         **Note**: This project uses the following containers: `About`, `Footer`, `Header`, `Skills`, `Testimonials`, and `Work`. 
    5.  Create `index.ts` inside `containers` and export each container using `export {default as Name} from "./Name/Name"`

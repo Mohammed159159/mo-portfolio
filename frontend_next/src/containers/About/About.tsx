@@ -3,21 +3,15 @@
 import style from "./About.module.scss";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import {client, urlFor} from "../../api/client"
+import { client, urlFor } from "../../api/client";
 
 function About() {
-    interface about {
-        title: string,
-        imageUrl: string,
-        description: string
-    }
     //dynamically populate abouts array from sanity
-    const [abouts, setAbouts] = useState<about[]>([])
+    const [abouts, setAbouts] = useState([]);
     useEffect(() => {
         const query = '*[_type == "abouts"]';
-        client.fetch(query)
-        .then((data) => setAbouts(data))
-    }, [])
+        client.fetch(query).then((data) => setAbouts(data));
+    }, []);
 
     return (
         <>
@@ -34,14 +28,15 @@ function About() {
                         whileInView={{ opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
                     >
-                        <img alt={urlFor(about.title).url()} src={urlFor(about.imageUrl).url()}></img>
-                        <h2 className="bold-text"
-                            style={{ marginTop: 20 }}>
-                            {urlFor(about.title).url()}
-                        </h2> 
-                        <p className="p-text"
-                            style={{ marginTop: 10 }}>
-                            {urlFor(about.description).url()}
+                        <img
+                            alt={about["title"]}
+                            src={urlFor(about["imgUrl"]).url()}
+                        ></img>
+                        <h2 className="bold-text" style={{ marginTop: 20 }}>
+                            {about["title"]}
+                        </h2>
+                        <p className="p-text" style={{ marginTop: 10 }}>
+                            {about["description"]}
                         </p>
                     </motion.div>
                 ))}
