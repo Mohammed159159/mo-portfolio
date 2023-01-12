@@ -5,6 +5,7 @@
 3. Add schemas in `./backend_sanity/mo-portfolio/schemas` and export them in `schema.ts`
 4. In `sanity.config.ts`, change `import {schemaTypes} from './schemas/'` to `import {schemaTypes} from './schemas/schema'`
 5. Move to `mo-portfolio` using `cd ./mo-portfolio` and run `npm run dev` to open studio
+6. After creating frontend, create a `client.ts` file to configure sanity client
 ## 2. Frontend
 1. Move to root directory
 2. Run `create-next-app@latest`
@@ -19,19 +20,21 @@
    2.  In the same drectory, create `App.scss` to use the `globals.css` settings and import file in `frontend_next/pages/_app.tsx`
    3.  Set up your folder structure 
           <pre>
-          frontend_next/pages
+          frontend_next/src
+          ├───api
           ├───assets
           ├───components
           ├───constants
           ├───containers
-   1.  Create containers' folders having the files needed: `Name.tsx`, `Name.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
+          ├───pages
+   4.  Create containers' folders having the files needed: `Name.tsx`, `Name.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
         
         
         **Note**: This project uses the following containers: `About`, `Footer`, `Header`, `Skills`, `Testimonials`, and `Work`. 
-   2.  Create `index.ts` inside `containers` and export each container using `export {default as Name} from "./Name/Name"`
-   3.  Import components in `frontend_next/pages/index.tsx` and their styles in their corresponding `.tsx` files as following: `import styles from ./Name.module.scss`
-   4.  Add containers to HTML tree
-   5.  Create needed components' folders and the files needed: `Name.tsx`, `Name.module.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
+   5.  Create `index.ts` inside `containers` and export each container using `export {default as Name} from "./Name/Name"`
+   6.  Import containers in `frontend_next/pages/index.tsx` and their styles in their corresponding `.tsx` files as following: `import styles from ./Name.module.scss`
+   7.  Add containers to HTML tree
+   8.  Create needed components' folders and the files needed: `Name.tsx`, `Name.module.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
 
 
         **Note**: This project uses `Navbar` component. 
