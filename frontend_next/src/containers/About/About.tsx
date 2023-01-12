@@ -4,7 +4,7 @@ import style from "./About.module.scss";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { client, urlFor } from "../../api/client";
-
+//TODO: Add environmental variables to client.ts
 function About() {
     //dynamically populate abouts array from sanity
     const [abouts, setAbouts] = useState([]);
