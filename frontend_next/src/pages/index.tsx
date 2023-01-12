@@ -12,8 +12,8 @@ import {
     Skills,
     Testimonials,
     Work,
-} from "./containers";
-import { Navbar } from "./components";
+} from "../containers";
+import { Navbar } from "../components";
 
 export default function Home() {
     return (
