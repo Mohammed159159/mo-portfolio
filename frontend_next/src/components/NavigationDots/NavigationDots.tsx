@@ -1,12 +1,12 @@
 import React from "react";
 
-function NavigationDots(active:string) {
+function NavigationDots({active}: {active: string}) {
     return (
-        <div className="app__navdots">
+        <div className="app__navigation">
             {["home", "about", "work", "skills", "testimonials", "contact"].map(
                 (item, index) => (
                     <a
-                        className="app__navdots-dot"
+                        className="app__navigation-dot"
                         href={`#${item}`}
                         key={`${index}-${item}`}
                         style={

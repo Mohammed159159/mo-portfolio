@@ -4,7 +4,7 @@ import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 function Socials() {
     return (
-        <div className="app__socials">
+        <div className="app__social">
             <div>
                 <FaFacebookF />
             </div>
