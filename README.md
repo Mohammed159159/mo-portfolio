@@ -28,6 +28,7 @@
           ├───constants
           ├───containers
           ├───pages
+          ├───wrapper
    4.  Create containers' folders having the files needed: `Name.tsx`, `Name.scss`, `NameSpec.ts`, `Name.stories.tsx`, etc.
      
         
