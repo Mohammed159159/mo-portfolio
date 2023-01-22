@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { AiFillGithub, AiFillEye } from "react-icons/Ai";
 import { motion } from "framer-motion";
 import { client, urlFor } from "../../api/client";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import parse from "html-react-parser";
 
 type WorkData = {
@@ -171,4 +171,4 @@ function Work() {
     );
 }
 
-export default AppWrap(Work, "work");
+export default AppWrap(MotionWrap(Work, "app__work"), "work", "app__primarybg");

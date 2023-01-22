@@ -4,7 +4,7 @@ import style from "./About.module.scss";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { client, urlFor } from "../../api/client";
-import { AppWrap} from "../../wrapper";
+import { AppWrap, MotionWrap} from "../../wrapper";
 import  parse from "html-react-parser";
 import { head_text } from "../../constants/text";
 
@@ -52,4 +52,4 @@ function About() {
     );
 }
 
-export default AppWrap(About, "about");
+export default AppWrap(MotionWrap(About, "app__about"), "about", "app__whitebg");
