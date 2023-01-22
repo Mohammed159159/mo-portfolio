@@ -1,6 +1,7 @@
 import React from 'react'
 import Socials from '../components/Socials/Socials'
 import NavigationDots from '../components/NavigationDots/NavigationDots'
+import { username, year } from '../constants/text'
 
 const AppWrap = (Component: React.FunctionComponent, idName: string, classNames?: string) => function HOC() {
   return (
@@ -10,7 +11,7 @@ const AppWrap = (Component: React.FunctionComponent, idName: string, classNames?
               <Component />
               <div
                   className='copyright'>
-                  <p className='p-text'>@2023 Mohammed</p>
+          <p className='p-text'>@{year} {username}</p>
               </div>
           </div>
           <NavigationDots active={idName} />

@@ -46,3 +46,4 @@
    11. Add assets in `frontend_next/pages/assets` folder
    12. Create `images.ts` in `frontend_next/constants` to import paths from assets and export them as `images` module
    13. Create `text.ts` in `frontend_next/constants` to make hardcoded text come from one file
+   14. Create TypeScript `type`s for Sanity's data

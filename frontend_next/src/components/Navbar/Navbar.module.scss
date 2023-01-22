@@ -19,6 +19,8 @@ $satisfy: Satisfy, Sans-Serif;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    user-select: none;
+    cursor: pointer;
 }
 
 .app__navbar-links {

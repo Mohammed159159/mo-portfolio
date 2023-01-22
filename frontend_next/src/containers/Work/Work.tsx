@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { portfolioItems } from "../../api/data";
+import { portfolioItems, portfolioText } from "../../constants/text";
 import style from "./Work.module.scss";
 import { useState, useEffect } from "react";
 import { AiFillGithub, AiFillEye } from "react-icons/Ai";
 import { motion } from "framer-motion";
 import { client, urlFor } from "../../api/client";
 import { AppWrap } from "../../wrapper";
+import parse from "html-react-parser";
 
 type WorkData = {
     title: string;
@@ -42,10 +43,10 @@ function Work() {
     }, []);
 
     //define portfolio filter active indicator
-    const [activeFilter, setActiveFilter] = useState("All");
+    const [activeFilter, setActiveFilter] = useState<string>("All");
 
     //handle filter logic
-    const portfolioItemsFilter = (item: string) => {
+    const portfolioItemsFilter = (item: string): void => {
         setActiveFilter(item);
         setAnimateCard({ y: 100, opacity: 0 });
         setTimeout(() => {
@@ -65,7 +66,7 @@ function Work() {
     return (
         <div className={style["app__work"]}>
             <h2 className="head-text">
-                Creative <span>Portfolio</span>
+                {parse(portfolioText)}
             </h2>
 
             <div className={style["app__work-filter"]}>

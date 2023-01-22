@@ -4,6 +4,7 @@ import style from "./Header.module.scss";
 import { motion } from "framer-motion";
 import images from "../../constants/images"
 import { AppWrap } from "../../wrapper";
+import { roles, username } from "../../constants/text";
 
 const scaleVariants = {
     whileInView: {
@@ -31,16 +32,11 @@ function Header() {
                         <span>👋</span>
                         <div style={{ marginLeft: 30 }}>
                             <p className="p-text">Hello, I am</p>
-                            <h1 className="head-text">Mohammed</h1>
+                            <h1 className="head-text">{username}</h1>
                         </div>
                     </div>
                     <div className={`tag-cmp app__flex ${style["tag-cmp"]}`}>
-                        {[
-                            "Web Developer",
-                            "Full-Stack Developer",
-                            "Freelancer",
-                            "Engineering Student",
-                        ].map((badge) => (
+                        {roles.map((badge) => (
                             <p className="p-text" key={`badge-${badge}`}>
                                 {badge}
                             </p>

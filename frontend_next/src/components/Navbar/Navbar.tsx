@@ -2,20 +2,14 @@ import React, { useState } from "react";
 import style from "./Navbar.module.scss";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { pageSections, username } from "../../constants/text";
 function Navbar() {
     const [toggle, setToggle] = useState(false);
     return (
         <nav className={style["app__navbar"]}>
-            <div className={style["app__navbar-logo"]}>Mohammed</div>
+            <div className={style["app__navbar-logo"]}>{username}</div>
             <ul className={style["app__navbar-links"]}>
-                {[
-                    "home",
-                    "about",
-                    "work",
-                    "skills",
-                    "testimonials",
-                    "contact",
-                ].map((item) => (
+                {pageSections.map((item) => (
                     <li className="app__flex p-text" key={`link-${item}`}>
                         <div></div>
                         <a href={`#${item}`}>{item}</a>

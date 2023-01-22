@@ -1,9 +1,10 @@
 import React from "react";
-
+import { pageSections } from "../../constants/text";
+import style from "./NavigationDots.module.scss"
 function NavigationDots({active}: {active: string}) {
     return (
-        <div className="app__navigation">
-            {["home", "about", "work", "skills", "testimonials", "contact"].map(
+        <div className={style["app__navigation"]}>
+            {pageSections.map(
                 (item, index) => (
                     <a
                         className="app__navigation-dot"

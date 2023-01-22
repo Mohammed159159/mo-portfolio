@@ -5,10 +5,17 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { client, urlFor } from "../../api/client";
 import { AppWrap} from "../../wrapper";
-//TODO: Add environmental variables to client.ts
+import  parse from "html-react-parser";
+import { head_text } from "../../constants/text";
+
+type About = {
+    title: string,
+    imgUrl: string,
+    description: string
+}
 function About() {
     //dynamically populate abouts array from sanity
-    const [abouts, setAbouts] = useState([]);
+    const [abouts, setAbouts] = useState<About[]>([]);
     useEffect(() => {
         const query = '*[_type == "abouts"]';
         client.fetch(query).then((data) => setAbouts(data));
@@ -17,8 +24,7 @@ function About() {
     return (
         <>
             <div className="head-text">
-                A<span> Well-carfted website </span>
-                means A<span> thriving business</span>
+                {parse(head_text)}
             </div>
 
             <div className={style["app__profiles"]}>

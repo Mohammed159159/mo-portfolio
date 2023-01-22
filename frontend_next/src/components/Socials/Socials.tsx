@@ -1,10 +1,10 @@
 import React from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-
+import style from "./Socials.module.scss"
 function Socials() {
     return (
-        <div className="app__social">
+        <div className={style["app__social"]}>
             <div>
                 <FaFacebookF />
             </div>
