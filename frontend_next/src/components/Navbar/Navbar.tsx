@@ -7,7 +7,7 @@ function Navbar() {
     const [toggle, setToggle] = useState(false);
     return (
         <nav className={style["app__navbar"]}>
-            <div className={style["app__navbar-logo"]}>{username}</div>
+            <a className={style["app__navbar-logo"]} href={`#${pageSections[0]}`}>{username}</a>
             <ul className={style["app__navbar-links"]}>
                 {pageSections.map((item) => (
                     <li className="app__flex p-text" key={`link-${item}`}>
