@@ -7,7 +7,7 @@ function NavigationDots({active}: {active: string}) {
             {pageSections.map(
                 (item, index) => (
                     <a
-                        className="app__navigation-dot"
+                        className={style["app__navigation-dot"]}
                         href={`#${item}`}
                         key={`${index}-${item}`}
                         style={
