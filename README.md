@@ -44,4 +44,5 @@
    9.  Import components in `frontend_next/pages/index.tsx` and their styles in their corresponding `.tsx` files as following: `import styles from ./Name.module.scss`
    10. Add components to HTML tree
    11. Add assets in `frontend_next/pages/assets` folder
-   12. Create `images.ts` to import paths from assets and export them as `images` module
+   12. Create `images.ts` in `frontend_next/constants` to import paths from assets and export them as `images` module
+   13. Create `text.ts` in `frontend_next/constants` to make hardcoded text come from one file
