@@ -15,7 +15,7 @@
 5. Add extra packages: `prettier, jasmine, eslint-prettier` and run `npm install`
 6. Add `spec` folder with `jasmine`'s configurations
 7. Run `npm run dev` to make sure frontend is working
-8. Add more dependencies `npm install --save-dev @sanity/client @sanity/image-url framer-motion node-sass sass react-icons`
+8. Add more dependencies `npm install --save-dev @sanity/client @sanity/image-url framer-motion node-sass sass react-icons html-react-parser`
 9. Get frontend ready:
    1.  Add your CSS reusables in `./frontend_next/styles/globals.css`
    2.  In the same drectory, create `App.scss` to use the `globals.css` settings and import file in `frontend_next/pages/_app.tsx`
