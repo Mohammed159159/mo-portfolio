@@ -30,7 +30,7 @@ function Header() {
                         className={`badge-cmp app__flex ${style["badge-cmp"]}`}
                     >
                         <span>👋</span>
-                        <div style={{ marginLeft: 30 }}>
+                        <div style={{ marginLeft: "1vw" }}>
                             <p className="p-text">Hello, I am</p>
                             <h1 className="head-text">{username}</h1>
                         </div>

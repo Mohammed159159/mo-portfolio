@@ -5,14 +5,15 @@ import { motion } from "framer-motion";
 import { pageSections, username } from "../../constants/text";
 function Navbar() {
     const [toggle, setToggle] = useState(false);
+    const [activeSection, setActiveSection] = useState<string>("home")
     return (
         <nav className={style["app__navbar"]}>
             <a className={style["app__navbar-logo"]} href={`#${pageSections[0]}`}>{username}</a>
             <ul className={style["app__navbar-links"]}>
                 {pageSections.map((item) => (
-                    <li className="app__flex p-text" key={`link-${item}`}>
+                    <li className={`app__flex p-text ${item === activeSection? style["activeSection"] : ""}`} key={`link-${item}`}>
                         <div></div>
-                        <a href={`#${item}`}>{item}</a>
+                        <a onClick={() => setActiveSection(item)} href={`#${item}`}>{item}</a>
                     </li>
                 ))}
             </ul>
@@ -35,14 +36,7 @@ function Navbar() {
                         </motion.div>
 
                         <ul>
-                            {[
-                                "home",
-                                "about",
-                                "contacts",
-                                "work",
-                                "skills",
-                                "testimonials",
-                            ].map((item) => (
+                            {pageSections.map((item) => (
                                 <li
                                     onClick={() => setToggle(false)}
                                     className="app__flex p-text"

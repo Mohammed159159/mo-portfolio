@@ -11,7 +11,7 @@ const AppWrap = (Component: React.FunctionComponent, idName: string, classNames?
               <Component />
               <div
                   className='copyright'>
-          <p className='p-text'>@{year} {username}</p>
+          {/* <p className='p-text'>@{year} {username}</p> */}
               </div>
           </div>
           <NavigationDots active={idName} />

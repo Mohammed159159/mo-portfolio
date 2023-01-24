@@ -5,7 +5,7 @@ export const pageSections = [
     "about",
     "work",
     "skills",
-    // "testimonials",
+    "testimonials",
     "contact",
 ];
 
