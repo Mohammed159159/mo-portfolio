@@ -13,6 +13,7 @@ $satisfy: Satisfy, Sans-Serif;
     position: fixed;
     z-index: 2;
     padding: 1rem 2rem;
+    
 }
 .app__navbar-logo {
     font: 2rem $satisfy;
@@ -42,6 +43,9 @@ $satisfy: Satisfy, Sans-Serif;
             height: 5px;
             border-radius: 50%;
             margin-bottom: 5px;
+            transition: 0.3s ease-in-out;
+
+
         }
 
         a {
@@ -49,17 +53,16 @@ $satisfy: Satisfy, Sans-Serif;
             text-decoration: none;
             flex-direction: column;
             font-weight: 500;
+            transition: 0.3s ease-in-out;
 
             &:hover {
                 color: var(--secondary-color);
-                transition: 0.3s ease-in-out;
             }
         }
 
         &:hover {
             div {
                 background: var(--secondary-color);
-                transition: 0.3s ease-in-out;
 
             }
         }

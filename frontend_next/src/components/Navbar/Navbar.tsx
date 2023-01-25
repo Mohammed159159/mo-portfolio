@@ -1,19 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./Navbar.module.scss";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { pageSections, username } from "../../constants/text";
-function Navbar() {
+function Navbar({ refs }: { refs: (HTMLDivElement)[] }) {
     const [toggle, setToggle] = useState(false);
-    const [activeSection, setActiveSection] = useState<string>("home")
+    const [activeSection, setActiveSection] = useState<string>("home");
+    const navRef = useRef<HTMLElement | null>(null)
+    const handleScroll = () => {
+        refs.forEach((ref) => {
+            const sectionTop = ref?.offsetTop;
+            const navHeight = navRef.current?.clientHeight != undefined? navRef.current?.clientHeight : 100;
+            if ((scrollY + navHeight) >= sectionTop) {
+                console.log(ref?.id)
+                setActiveSection(ref?.id as string);
+            }
+        });
+    };
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    });
     return (
-        <nav className={style["app__navbar"]}>
-            <a className={style["app__navbar-logo"]} href={`#${pageSections[0]}`}>{username}</a>
+        <nav className={style["app__navbar"]} ref={navRef != undefined? navRef :null}>
+            <a
+                className={style["app__navbar-logo"]}
+                href={`#${pageSections[0]}`}
+            >
+                {username}
+            </a>
             <ul className={style["app__navbar-links"]}>
                 {pageSections.map((item) => (
-                    <li className={`app__flex p-text ${item === activeSection? style["activeSection"] : ""}`} key={`link-${item}`}>
+                    <li
+                        className={`app__flex p-text ${
+                            item === activeSection ? style["activeSection"] : ""
+                        }`}
+                        key={`link-${item}`}
+                    >
                         <div></div>
-                        <a onClick={() => setActiveSection(item)} href={`#${item}`}>{item}</a>
+                        <a
+                            href={`#${item}`}
+                        >
+                            {item}
+                        </a>
                     </li>
                 ))}
             </ul>
@@ -24,7 +55,7 @@ function Navbar() {
                 {toggle && (
                     <motion.div
                         className={style["app__navbar-menuBody"]}
-                        animate={{ x: [300, 0]}}
+                        animate={{ x: [300, 0] }}
                         transition={{ duration: 0.85, ease: "easeOut" }}
                     >
                         <motion.div

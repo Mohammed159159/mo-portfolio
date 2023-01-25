@@ -4,6 +4,7 @@ import NavigationDots from '../components/NavigationDots/NavigationDots'
 import { username, year } from '../constants/text'
 
 const AppWrap = (Component: React.FunctionComponent, idName: string, classNames?: string) => function HOC() {
+
   return (
     <div id={idName} className={`app__container ${classNames}`}>
           <Socials />
