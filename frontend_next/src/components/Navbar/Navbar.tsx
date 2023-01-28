@@ -12,7 +12,6 @@ function Navbar({ refs }: { refs: (HTMLDivElement)[] }) {
             const sectionTop = ref?.offsetTop;
             const navHeight = navRef.current?.clientHeight != undefined? navRef.current?.clientHeight : 100;
             if ((scrollY + navHeight) >= sectionTop) {
-                console.log(ref?.id)
                 setActiveSection(ref?.id as string);
             }
         });

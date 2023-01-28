@@ -29,7 +29,6 @@ function Testimonials() {
             client.fetch(query).then((data) => setTestimonials(data));
         };
     }, []);
-    const currentTestimonial = testimonials[currentIndex];
 
     const handleCardNav = (index: number): void => {
         setCurrentIndex(index);
@@ -46,23 +45,24 @@ function Testimonials() {
 
     return (
         <div className={style["app__testimonials"]}>
-\                <>
+            {testimonials["length"] && (
+                <>
                     <div
                         className={`${style["app__testimonial-card"]} app__flex`}
                     >
                         <img
-                            src={urlFor(currentTestimonial["imgurl"]).url()}
-                            alt={currentTestimonial["name"]}
+                            src={urlFor(testimonials[currentIndex]["imgurl"]).url()}
+                            alt={testimonials[currentIndex]["name"]}
                         />
                         <div className={`${style["app__testimonial-content"]}`}>
                             <p className="p-text">
-                                {currentTestimonial["feedback"]}
+                                {testimonials[currentIndex]["feedback"]}
                             </p>
                             <h4 className="bold-text">
-                                {currentTestimonial["name"]}
+                                {testimonials[currentIndex]["name"]}
                             </h4>
                             <h5 className="p-text">
-                                {currentTestimonial["company"]}
+                                {testimonials[currentIndex]["company"]}
                             </h5>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ function Testimonials() {
                         </motion.div>
                     </div>
                 </>
-         
+            )}
 
             <div className={`${style["app__testimonials-brands"]} app__flex`}>
                 {
