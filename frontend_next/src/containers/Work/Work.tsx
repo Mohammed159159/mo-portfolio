@@ -3,7 +3,7 @@ import React from "react";
 import { portfolioItems, portfolioText } from "../../constants/text";
 import style from "./Work.module.scss";
 import { useState, useEffect } from "react";
-import { AiFillGithub, AiFillEye } from "react-icons/Ai";
+import { AiFillGithub, AiFillEye } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { client, urlFor } from "../../api/client";
 import { AppWrap, MotionWrap } from "../../wrapper";
