@@ -46,7 +46,7 @@ function Testimonials() {
 
     return (
         <div className={style["app__testimonials"]}>
-            {testimonials["length"] && (
+            {testimonials.length && (
                 <>
                     <div
                         className={`${style["app__testimonial-card"]} app__flex`}
