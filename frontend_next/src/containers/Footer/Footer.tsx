@@ -68,7 +68,6 @@ function Footer() {
 
 
     };
-    // if (!isFormSubmitted) {
         return (
             <div className={`${style["app__footer"]}`}>
                 <h2 className="head-text">{parse(contactText)}</h2>
@@ -126,9 +125,7 @@ function Footer() {
                 </div> : <h3 className="head-text">{submitText}</h3>}
             </div>
         );
-    // } else {
-    //     return (<h3 className="head-text">{submitText}</h3>);
-    // }
+
 }
 
 export default AppWrap(

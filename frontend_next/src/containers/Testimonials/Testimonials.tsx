@@ -43,9 +43,9 @@ function Testimonials() {
         };
     }, []);
 
+    if(testimonials.length == 0) return <h2 className="head-text">Loading...</h2>
     return (
         <div className={style["app__testimonials"]}>
-            {testimonials["length"] && (
                 <>
                     <div
                         className={`${style["app__testimonial-card"]} app__flex`}
@@ -98,7 +98,6 @@ function Testimonials() {
                         </motion.div>
                     </div>
                 </>
-            )}
 
             <div className={`${style["app__testimonials-brands"]} app__flex`}>
                 {
