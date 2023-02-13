@@ -16,6 +16,8 @@ import {
 import { Navbar } from "../components";
 import { useRef } from "react";
 import { pageSections } from "../constants/text";
+import Head from "next/head";
+import images from "../constants/images";
 
 
 
@@ -25,6 +27,18 @@ export default function Home() {
     refs.current = []; //problems
     return (
         <div className="app">
+            <Head>
+            <title>MOHAMMED</title>
+                <meta
+                    name="description"
+                    content="Web developer portfolio"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <link rel="icon" href={images.logo.src} />
+            </Head>
             <Navbar refs={refs.current} />
             <div id={pageSections[0]} ref={rf => rf != null? refs.current.push(rf) : ""} >
                 <Header />
@@ -41,7 +55,7 @@ export default function Home() {
             <div id={pageSections[4]} ref={rf => rf != null? refs.current.push(rf) : ""}>
                 <Testimonials />
             </div>
-            <div id={pageSections[5]} ref={rf => rf != null? refs.current.push(rf) : ""}>
+            <div id={pageSections[4]} ref={rf => rf != null? refs.current.push(rf) : ""}>
                 <Footer />
             </div>
         </div>

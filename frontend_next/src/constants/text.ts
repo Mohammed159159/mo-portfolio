@@ -1,4 +1,4 @@
-export const portfolioItems = ["Frontend", "Backend", "Mobile", "All"];
+export const portfolioItems = ["Frontend", "Backend", "All"];
 
 export const pageSections = [
     "home",

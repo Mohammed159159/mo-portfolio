@@ -8,7 +8,7 @@ import { client, urlFor } from "../../api/client";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import parse from "html-react-parser";
 import { skillsText } from "../../constants/text";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 type Skill = {
     name: string;

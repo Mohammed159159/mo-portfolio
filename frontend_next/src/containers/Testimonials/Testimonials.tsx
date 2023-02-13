@@ -33,13 +33,13 @@ export function Testimonials() {
     };
 
     //Get brands from sanity
-    const [brands, setBrands] = useState<Brand[]>([]);
-    useEffect(() => {
-        return () => {
-            const query = '*[_type == "brands"]';
-            client.fetch(query).then((data) => setBrands(data));
-        };
-    });
+    // const [brands, setBrands] = useState<Brand[]>([]);
+    // useEffect(() => {
+    //     return () => {
+    //         const query = '*[_type == "brands"]';
+    //         client.fetch(query).then((data) => setBrands(data));
+    //     };
+    // });
 
     return (
         <div className={style["app__testimonials"]}>
@@ -98,7 +98,7 @@ export function Testimonials() {
             </>
             )}
 
-            <div className={`${style["app__testimonials-brands"]} app__flex`}>
+            {/* <div className={`${style["app__testimonials-brands"]} app__flex`}>
                 {
                     brands.map((brand, index) => 
                         <motion.div key={`${index}-${brand}`}
@@ -109,7 +109,7 @@ export function Testimonials() {
                     </motion.div>
                     )
                 }
-            </div>
+            </div> */}
         </div>
     );
 }
